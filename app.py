@@ -28,10 +28,6 @@ app.layout = html.Div(children=[
 
     dcc.Graph(
         id='graph'
-    ),
-
-    dcc.Graph(
-        id='graph2'
     )
 
 
