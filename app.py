@@ -8,13 +8,14 @@ print("Starting")
 app.layout = html.Div(children=[
     html.H1(children='Database Management - CSCI 4370'),
 
+    dcc.Dropdown(["Test1", "Test2", "Test3"], "Test2", id="dropdown"),
+
     html.Div(children='''
         Select Response Variable:
     '''),
 
     dcc.RadioItems(
         id='metric', 
-        #options=["Confirmed", "Deaths", "Testing_Rate", "Mortality_Rate"],
         options=[
             {'label': "Confirmed Cases", 'value': 'Confirmed'},
             {'label': "Confirmed Deaths", 'value': 'Deaths'},
@@ -27,8 +28,14 @@ app.layout = html.Div(children=[
 
     dcc.Graph(
         id='graph'
-        #figure=fig
+    ),
+
+    dcc.Graph(
+        id='graph2'
     )
+
+
+
 ])
 
 @app.callback(
