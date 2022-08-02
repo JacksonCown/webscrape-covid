@@ -41,6 +41,7 @@ def display_choropleth(dropdown, metric):
         
         df = pd.read_csv("data/bigTable.csv")
         # Our Graph
+
         fig = px.choropleth(df, locations='Province_State', locationmode="USA-states", color=metric,
                             animation_frame="Date",
                             color_continuous_scale="Blackbody_r",
