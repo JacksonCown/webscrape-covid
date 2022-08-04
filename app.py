@@ -6,7 +6,7 @@ app = Dash(__name__)
 print("Starting")
 
 # HTML Layout
-app.layout = html.Div(children=[
+app.layout = html.Div(id="page", children=[
     # Header
     html.H1(children='Database Management - CSCI 4370'),
 
@@ -79,6 +79,11 @@ def display_choropleth(dropdown, metric):
 
         return f'Select Sex: ', choices, fig
     else:
+        
+        # Multichoice for Demographics data
+        choices = [{'label': "Male", 'value': 'male'},
+            {'label': "Female", 'value': 'female'},
+            {'label': "Both", 'value': 'both'}]
         # Todo: Implement correct graph for vaccine table
         # Place Holder Code Below
         df = pd.read_csv("data/bigTable.csv")
